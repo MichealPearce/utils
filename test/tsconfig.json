@@ -9,6 +9,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
+		"noEmit": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
@@ -16,15 +17,12 @@
 
 		"declaration": true,
 		"declarationDir": "dist",
-		"outDir": "dist",
-
-		"suppressImplicitAnyIndexErrors": true,
 
 		"baseUrl": ".",
 		"paths": {
-			"@michealpearce/utils": ["./src/index.ts"],
-			"@michealpearce/utils/*": ["./src/*"]
+			"@michealpearce/utils": ["../src/index.ts"],
+			"@michealpearce/utils/*": ["../src/*"]
 		}
 	},
-	"include": ["src"]
+	"include": ["./*", "../src/*"]
 }

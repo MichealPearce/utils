@@ -1,2 +1,2 @@
-export * from './other'
-export const TEST = 'hello'
+export * from './types'
+export * from './functions'

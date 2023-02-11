@@ -1,3 +1,16 @@
-import { OTHER, TEST } from '@michealpearce/utils'
+import { extract } from '@michealpearce/utils'
 
-console.log(TEST, OTHER)
+type Test = {
+	a: string
+	b: number
+	c: boolean
+}
+
+const test: Test = {
+	a: 'a',
+	b: 1,
+	c: true,
+}
+
+const extracted = extract(test, ['a', 'c'])
+console.log('extracted', extracted)
