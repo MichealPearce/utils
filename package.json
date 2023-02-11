@@ -1,17 +1,22 @@
 {
-  "name": "utils",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0",
-    "vite-node": "^0.28.4",
-    "vite-plugin-node": "^3.0.2"
-  }
+	"name": "@michealpearce/utils",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"dev": "vite-node test/index.ts",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@types/node": "^18.13.0",
+		"typescript": "^4.9.3",
+		"vite": "^4.1.0",
+		"vite-node": "^0.28.4",
+		"vite-plugin-node": "^3.0.2"
+	}
 }

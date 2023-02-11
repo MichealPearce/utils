@@ -13,7 +13,13 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+
+		"baseUrl": ".",
+		"paths": {
+			"@michealpearce/utils": ["./src/index.ts"],
+			"@michealpearce/utils/*": ["./src/*"]
+		}
 	},
-	"include": ["src", "vite-env.d.ts"]
+	"include": ["src", "test"]
 }
