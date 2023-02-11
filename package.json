@@ -2,10 +2,28 @@
 	"name": "@michealpearce/utils",
 	"version": "0.0.0",
 	"type": "module",
+	"license": "Unlicense",
+	"author": {
+		"name": "Micheal Pearce",
+		"email": "michealpearce@outlook.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MichealPearce/utils.git"
+	},
+	"bugs": {
+		"url": "https://github.com/MichealPearce/utils/issues"
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json"
 	},
+	"files": [
+		"dist",
+		"package.json"
+	],
 	"scripts": {
 		"dev": "nodemon",
 		"build:clean": "echo 'removing dist..' && rm -rf dist",
