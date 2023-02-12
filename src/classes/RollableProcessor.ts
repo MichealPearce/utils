@@ -10,11 +10,10 @@ export class RollableProcessor {
 
 	add(...items: RollableFunction[]) {
 		for (const item of items) this.items.add(item)
-
 		if (!this.running) this.running = this.start()
 	}
 
-	async start() {
+	async start(): Promise<void> {
 		for (const item of this.items) {
 			if (this.processing.size >= this.options.concurrency)
 				await Promise.all(this.processing)
@@ -26,9 +25,14 @@ export class RollableProcessor {
 
 			this.processing.add(call)
 		}
+
+		if (this.processing.size) await Promise.all(this.processing)
+
+		if (this.items.size) return this.start()
+		else this.running = null
 	}
 
-	async process(item: RollableFunction) {
+	protected async process(item: RollableFunction) {
 		return await item()
 	}
 }
