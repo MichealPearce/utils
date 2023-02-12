@@ -1,7 +1,7 @@
 export type Rollable = void | Promise<void>
 export type RollableFunction = () => Rollable
 
-export function roll(funcs: RollableFunction[]) {
+export function roll(funcs: RollableFunction[]): Rollable {
 	let rolling: Rollable
 
 	for (const func of funcs)
