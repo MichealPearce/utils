@@ -1,5 +1,5 @@
 export type Rollable = void | Promise<void>
-export type RollableFunction = () => Rollable
+export type RollableFunction = (..._no_args: []) => Rollable
 
 export function roll(funcs: RollableFunction[]): Rollable {
 	let rolling: Rollable
