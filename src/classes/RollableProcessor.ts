@@ -1,4 +1,4 @@
-import { Rollable, RollableFunction } from '@michealpearce/utils'
+import { RollableFunction, Rollable } from '../functions'
 
 export class RollableProcessor {
 	items = new Set<RollableFunction>()

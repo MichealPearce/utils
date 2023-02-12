@@ -1,5 +1,5 @@
-import { sleep } from '@michealpearce/utils'
-import { FunctionType } from '@michealpearce/utils/types'
+import { FunctionType } from '../types'
+import { sleep } from './sleep'
 
 /**
  * Returns a function that delays the execution of the function.

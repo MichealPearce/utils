@@ -1,4 +1,5 @@
-import { ConstructError, FunctionType } from '@michealpearce/utils'
+import { ConstructError } from '../classes'
+import { FunctionType } from '../types'
 
 /**
  * Returns the result of the function if it does not throw an error.

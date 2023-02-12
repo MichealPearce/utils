@@ -20,12 +20,6 @@
 		"outDir": "dist",
 
 		"useDefineForClassFields": true,
-		"suppressImplicitAnyIndexErrors": true,
-
-		"baseUrl": ".",
-		"paths": {
-			"@michealpearce/utils": ["./src/index.ts"],
-			"@michealpearce/utils/*": ["./src/*"]
-		}
+		"suppressImplicitAnyIndexErrors": true
 	}
 }

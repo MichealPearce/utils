@@ -1,4 +1,8 @@
-import { isArray, isMap, isObject, isSet, isString } from '@michealpearce/utils'
+import { isArray } from './isArray'
+import { isMap } from './isMap'
+import { isObject } from './isObject'
+import { isSet } from './isSet'
+import { isString } from './isString'
 
 /**
  * Returns the size of the item.

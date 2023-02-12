@@ -1,4 +1,4 @@
-import { FunctionType } from '@michealpearce/utils'
+import { FunctionType } from '../types'
 
 /**
  * Returns a function that can only be called once.

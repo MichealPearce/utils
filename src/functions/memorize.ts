@@ -1,4 +1,5 @@
-import { assign, FunctionType } from '@michealpearce/utils'
+import { FunctionType } from '../types'
+import { assign } from './assign'
 
 export type MemorizeResolver = (args: any[]) => any
 

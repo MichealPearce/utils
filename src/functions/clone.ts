@@ -1,5 +1,6 @@
 import { fromEntries, toEntries } from './entries'
-import { isArray, isObject } from './is'
+import { isArray } from './isArray'
+import { isObject } from './isObject'
 
 /**
  * Returns a shallow copy of the target.
