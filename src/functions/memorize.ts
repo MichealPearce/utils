@@ -1,7 +1,9 @@
 import { FunctionType } from '../types'
 import { assign } from './assign'
 
-export type MemorizeResolver = (args: any[]) => any
+export type MemorizeResolver<Func extends FunctionType> = (
+	args: Parameters<Func>,
+) => any
 
 export interface MemorizedFunction<Func extends FunctionType> {
 	(...args: Parameters<Func>): ReturnType<Func>
@@ -31,7 +33,7 @@ const defaultResolver = (args: any[]) => JSON.stringify(args)
  */
 export function memorize<Func extends FunctionType>(
 	func: Func,
-	resolve: MemorizeResolver = defaultResolver,
+	resolve: MemorizeResolver<Func> = defaultResolver,
 ): MemorizedFunction<Func> {
 	const cache = new Map<Parameters<Func>, ReturnType<Func>>()
 
