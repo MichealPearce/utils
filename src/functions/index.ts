@@ -18,6 +18,9 @@ export * from './group'
 export * from './difference'
 export * from './inObject'
 
+export * from './lastOf'
+export * from './firstOf'
+
 export * from './is'
 export * from './isError'
 export * from './isDate'
