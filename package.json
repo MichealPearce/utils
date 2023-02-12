@@ -25,7 +25,9 @@
 	},
 	"files": [
 		"dist",
-		"package.json"
+		"package.json",
+		"README.md",
+		"LICENSE"
 	],
 	"scripts": {
 		"dev": "nodemon",
