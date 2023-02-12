@@ -9,6 +9,25 @@ export interface MemorizedFunction<Func extends FunctionType> {
 
 const defaultResolver = (args: any[]) => JSON.stringify(args)
 
+/**
+ * Returns a function that caches the result based on the arguments.
+ * The result is returned from the cache if the arguments are the same.
+ *
+ * @param func The function to cache.
+ * @param resolve A function that resolves the arguments to a key.
+ * @returns A function that caches the result based on the arguments.
+ *
+ * @example
+ * const func = memorize((a: number, b: number) => {
+ * 	console.log('called') // only called once
+ * 	return a + b
+ * })
+ *
+ * const a = func(1, 2)
+ * const b = func(1, 2)
+ *
+ * console.log(a === b) // true
+ */
 export function memorize<Func extends FunctionType>(
 	func: Func,
 	resolve: MemorizeResolver = defaultResolver,
