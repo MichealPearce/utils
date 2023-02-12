@@ -1,7 +1,12 @@
+import { memorize } from '@michealpearce/utils'
 import { testIs } from './is'
 
-function test() {
-	testIs()
-}
+testIs()
 
-test()
+const test = memorize(function (a: number, b: number) {
+	console.log('called')
+	return a + b
+})
+
+console.log(test(1, 2))
+console.log(test(1, 2))
