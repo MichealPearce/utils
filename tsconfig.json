@@ -1,10 +1,11 @@
 {
+	"include": ["src"],
 	"compilerOptions": {
 		"target": "ESNext",
-		"useDefineForClassFields": true,
 		"module": "ESNext",
 		"lib": ["ESNext", "DOM"],
 		"moduleResolution": "Node",
+
 		"strict": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
@@ -18,6 +19,7 @@
 		"declarationDir": "dist",
 		"outDir": "dist",
 
+		"useDefineForClassFields": true,
 		"suppressImplicitAnyIndexErrors": true,
 
 		"baseUrl": ".",
@@ -25,6 +27,5 @@
 			"@michealpearce/utils": ["./src/index.ts"],
 			"@michealpearce/utils/*": ["./src/*"]
 		}
-	},
-	"include": ["src"]
+	}
 }

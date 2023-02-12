@@ -1,16 +1,7 @@
-import { extract } from '@michealpearce/utils'
+import { testIs } from './is'
 
-type Test = {
-	a: string
-	b: number
-	c: boolean
+function test() {
+	testIs()
 }
 
-const test: Test = {
-	a: 'a',
-	b: 1,
-	c: true,
-}
-
-const extracted = extract(test, ['a', 'c'])
-console.log('extracted', extracted)
+test()

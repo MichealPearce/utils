@@ -1,9 +1,7 @@
-export function extract<Obj extends object, Key extends keyof Obj>(
+export function pick<Obj extends object, Key extends keyof Obj>(
 	obj: Obj,
 	keys: Key[],
-): {
-	[key in Key]: Obj[key]
-} {
+): Pick<Obj, Key> {
 	return keys.reduce((acc, key) => {
 		acc[key] = obj[key]
 		return acc

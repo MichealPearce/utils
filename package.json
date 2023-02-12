@@ -1,7 +1,6 @@
 {
 	"name": "@michealpearce/utils",
-	"version": "0.0.0",
-	"type": "module",
+	"version": "0.0.2",
 	"license": "Unlicense",
 	"author": {
 		"name": "Micheal Pearce",
@@ -14,11 +13,15 @@
 	"bugs": {
 		"url": "https://github.com/MichealPearce/utils/issues"
 	},
-	"main": "dist/index.js",
+	"main": "dist/esm/index.js",
 	"types": "dist/index.d.ts",
 	"exports": {
-		".": "./dist/index.js",
-		"./package.json": "./package.json"
+		"./package.json": "./package.json",
+		".": {
+			"require": "./dist/cjs/index.js",
+			"import": "./dist/esm/index.js",
+			"types": "./dist/index.d.ts"
+		}
 	},
 	"files": [
 		"dist",
@@ -26,10 +29,8 @@
 	],
 	"scripts": {
 		"dev": "nodemon",
-		"build:clean": "echo 'removing dist..' && rm -rf dist",
-		"build:compile": "echo 'compiling..' && tsc",
-		"build": "run-s build:clean build:compile",
-		"test": "echo 'running test...' && ts-node --esm --experimental-specifier-resolution=node test/index.ts"
+		"build": "bash ./scripts/build.sh",
+		"test": "echo 'running test...' && ts-node test/index.ts"
 	},
 	"nodemonConfig": {
 		"exec": "run-s build test",
