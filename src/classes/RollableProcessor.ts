@@ -27,7 +27,6 @@ export class RollableProcessor {
 		}
 
 		if (this.processing.size) await Promise.all(this.processing)
-
 		if (this.items.size) return this.start()
 		else this.running = null
 	}
