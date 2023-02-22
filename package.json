@@ -1,6 +1,6 @@
 {
 	"name": "@michealpearce/utils",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"license": "Unlicense",
 	"author": {
 		"name": "Micheal Pearce",
@@ -32,7 +32,8 @@
 	"scripts": {
 		"dev": "nodemon",
 		"build": "bash ./scripts/build.sh",
-		"test": "echo 'running test...' && ts-node test/index.ts"
+		"test": "echo 'running test...' && ts-node test/index.ts",
+		"publish": "yarn build && yarn npm publish --access public"
 	},
 	"nodemonConfig": {
 		"exec": "run-s build test",
