@@ -1,4 +1,5 @@
 import { FunctionType } from '../types'
+import { ObjectMethodNames } from '../types/ObjectMethods'
 
 /**
  * Returns a function that is bound to the specified object.
@@ -48,6 +49,10 @@ export function bind<
  * const add = obj.add
  * console.log(add()) // 3
  */
-export function bindAll(obj: object, methods: string[]): void {
+export function bindAll<
+	Obj extends object,
+	Methods extends ObjectMethodNames<Obj>,
+>(obj: Obj, methods: Methods[]): void {
+	// @ts-expect-error not fixing index signature
 	for (const method of methods) obj[method] = bind(obj[method], obj)
 }
