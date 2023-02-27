@@ -19,6 +19,7 @@ export * from './difference'
 export * from './inObject'
 export * from './clone'
 export * from './reverse'
+export * from './countBy'
 
 export * from './lastOf'
 export * from './firstOf'
