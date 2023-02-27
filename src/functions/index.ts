@@ -18,6 +18,7 @@ export * from './group'
 export * from './difference'
 export * from './inObject'
 export * from './clone'
+export * from './reverse'
 
 export * from './lastOf'
 export * from './firstOf'
