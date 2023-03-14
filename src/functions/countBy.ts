@@ -31,3 +31,10 @@ export function countBy<
 
 	return count
 }
+
+export function countByKey<T extends object, K extends keyof T>(
+	collection: Array<T>,
+	key: K,
+) {
+	return countBy(collection, item => item[key])
+}
