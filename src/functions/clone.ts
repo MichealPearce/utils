@@ -1,6 +1,8 @@
 import { fromEntries, toEntries } from './entries'
 import { isArray } from './isArray'
+import { isMap } from './isMap'
 import { isObject } from './isObject'
+import { isSet } from './isSet'
 
 /**
  * Returns a shallow copy of the target.
@@ -17,8 +19,12 @@ import { isObject } from './isObject'
  * console.log(newObj === obj) // false
  * console.log(newObj.c === obj.c) // true
  */
-export function clone<A extends Record<any, any>>(target: A): A {
-	return fromEntries(toEntries(target))
+export function clone<A>(target: A): A {
+	if (isArray(target)) return Array.from(target) as A
+	else if (isSet(target)) return new Set(target) as A
+	else if (isMap(target)) return new Map(target) as A
+	else if (isObject(target)) return fromEntries(toEntries(target))
+	else return target
 }
 
 /**
