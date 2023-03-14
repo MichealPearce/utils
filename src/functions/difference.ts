@@ -1,3 +1,5 @@
+import { isArray } from './isArray'
+
 /**
  * Returns the difference between two arrays.
  * The difference is the items that are in the first array but not the second.
@@ -15,11 +17,18 @@
  *
  * console.log(diff) // [1]
  */
-export function difference<T>(target: T[], ...sources: T[][]): T[] {
+export function difference<T extends Iterable<any>>(
+	target: T,
+	...sources: T[]
+): T[] {
 	const diff: T[] = []
 
 	for (const item of target) {
-		const seen = sources.some(source => source.includes(item))
+		const seen = sources.some(source =>
+			isArray(source)
+				? source.includes(item)
+				: Array.from(source).includes(item),
+		)
 		if (!seen) diff.push(item)
 	}
 
