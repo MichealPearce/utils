@@ -21,6 +21,7 @@ export * from './clone'
 export * from './reverse'
 export * from './countBy'
 export * from './random'
+export * from './chunk'
 
 export * from './lastOf'
 export * from './firstOf'
