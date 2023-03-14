@@ -16,9 +16,7 @@ import { Is, Not, not } from './is'
  * 	// thing is type string
  * }
  */
-export function isFunction<T extends FunctionType>(
-	thing: unknown,
-): thing is Is<T, FunctionType> {
+export function isFunction<T>(thing: T): thing is Is<T, FunctionType> {
 	return typeof thing === 'function'
 }
 
