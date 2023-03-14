@@ -2,7 +2,7 @@ import { toEntries } from './entries'
 
 export type CountArrayByHandler<Collection extends Array<any>> = (
 	value: Collection[number],
-	key: number,
+	index: number,
 ) => any
 
 export type CountObjectByHandler<Collection extends object> = (
