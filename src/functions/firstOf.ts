@@ -16,5 +16,7 @@ export function firstOf<Collection extends Iterable<any> | string>(
 	? Item | undefined
 	: string | undefined {
 	for (const item of collection) return item
-	return undefined as any
+
+	// @ts-expect-error - return type clearly states that this could return undefined, but alast typescript doesn't understand that
+	return undefined
 }
