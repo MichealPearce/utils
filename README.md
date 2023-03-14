@@ -87,3 +87,74 @@ const fn = once(() => console.log('Hello World'))
 fn() // Hello World
 fn() // Does nothing
 ```
+
+## issers functions
+
+### `is`
+
+A function that returns true if the given value is truthy. Also has generics allowing for type narrowing
+
+#### Usage
+
+```js
+import { is } from '@michealpearce/utils'
+
+is('string') // true
+is(1) // true
+is(true) // true
+is(false) // false
+is(null) // false
+is(undefined) // false
+
+const test = null as string | null
+
+if(is<typeof test, string>(test)) {
+	// test will be narrowed to string
+}
+```
+
+### `not`
+
+A function that returns true if the given value is falsy. Also has generics allowing for type narrowing
+
+#### Usage
+
+```js
+import { not } from '@michealpearce/utils'
+
+not('string') // false
+not(1) // false
+not(true) // false
+not(false) // true
+not(null) // true
+not(undefined) // true
+
+const test = null as string | null
+
+if(not<typeof test, string>(test)) {
+	// test will be narrowed to null
+}
+```
+
+### `isString`
+
+A function that returns true if the given value is a string.
+
+#### Usage
+
+```js
+import { isString } from '@michealpearce/utils'
+
+isString('string') // true
+isString(1) // false
+isString(true) // false
+isString(false) // false
+isString(null) // false
+isString(undefined) // false
+
+const test = null as string | null
+
+if(isString(test)) {
+	// test will be narrowed to string
+}
+```
