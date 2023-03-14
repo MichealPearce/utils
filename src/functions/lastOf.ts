@@ -1,3 +1,6 @@
+import { isArray } from './isArray'
+import { isString } from './isString'
+
 /**
  * Returns the last item of a collection.
  *
@@ -15,6 +18,9 @@ export function lastOf<Collection extends Iterable<any> | string>(
 ): Collection extends Iterable<infer Item>
 	? Item | undefined
 	: string | undefined {
+	if (isString(collection) || isArray(collection))
+		return collection[collection.length - 1]
+
 	let last: any
 	for (const item of collection) last = item
 	return last
