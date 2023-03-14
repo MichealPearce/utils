@@ -1,5 +1,4 @@
 import { ConstructError } from '../classes'
-import { FunctionType } from '../types'
 
 /**
  * Returns the result of the function if it does not throw an error.
@@ -15,7 +14,7 @@ import { FunctionType } from '../types'
  *
  * console.log(result) // ConstructError
  */
-export function attempt<Func extends FunctionType>(
+export function attempt<Func extends (..._no_args: []) => any>(
 	func: Func,
 ): ReturnType<Func> | ConstructError {
 	try {
