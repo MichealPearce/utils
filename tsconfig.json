@@ -18,6 +18,7 @@
 		"declaration": true,
 		"declarationDir": "dist",
 		"outDir": "dist",
+		"emitDeclarationOnly": true,
 
 		"useDefineForClassFields": true,
 		"suppressImplicitAnyIndexErrors": true
