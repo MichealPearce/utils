@@ -7,12 +7,16 @@ import { isNumber } from './isNumber'
 import { isString } from './isString'
 import { isSymbol } from './isSymbol'
 
-export function isPrimitive<T>(
-	thing: T,
-): thing is Is<
-	T,
-	string | number | boolean | symbol | bigint | undefined | null
-> {
+export type PrimitiveValue =
+	| string
+	| number
+	| boolean
+	| symbol
+	| bigint
+	| undefined
+	| null
+
+export function isPrimitive<T>(thing: T): thing is Is<T, PrimitiveValue> {
 	return (
 		isString(thing) ||
 		isNumber(thing) ||
@@ -24,8 +28,6 @@ export function isPrimitive<T>(
 	)
 }
 
-export function notPrimitive<T>(
-	thing: T,
-): thing is Not<T, string | number | boolean | symbol | bigint> {
+export function notPrimitive<T>(thing: T): thing is Not<T, PrimitiveValue> {
 	return not(isPrimitive(thing))
 }
