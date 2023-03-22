@@ -1,6 +1,6 @@
-import { inObject } from './inObject'
 import { Is, Not, not } from './is'
 import { isFunction } from './isFunction'
+import { notNull } from './isNull'
 
 /**
  * Check if a thing is iterable.
@@ -10,7 +10,10 @@ import { isFunction } from './isFunction'
  */
 export function isIterable<T>(thing: T): thing is Is<T, Iterable<any>> {
 	return (
-		inObject(thing, [Symbol.iterator]) && isFunction(thing[Symbol.iterator])
+		typeof thing === 'object' &&
+		notNull(thing) &&
+		Symbol.iterator in thing &&
+		isFunction(thing[Symbol.iterator])
 	)
 }
 
