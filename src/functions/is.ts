@@ -1,14 +1,5 @@
-export type Is<Thing, Match> = Thing extends unknown
-	? Match
-	: Thing extends Match
-	? Thing
-	: never
-
-export type Not<Thing, Match> = Thing extends Match
-	? never
-	: Thing extends unknown
-	? Thing
-	: never
+export type Is<Thing, Match> = Thing extends Match ? Thing : never
+export type Not<Thing, Match> = Thing extends Match ? never : Thing
 
 /**
  * A function that returns true if the given value is truthy. Also has generics allowing for type narrowing
