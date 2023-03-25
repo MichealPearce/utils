@@ -1,3 +1,4 @@
+// export all files in folder
 export * from './pick'
 export * from './omit'
 export * from './defaults'
@@ -23,6 +24,8 @@ export * from './reverse'
 export * from './countBy'
 export * from './random'
 export * from './chunk'
+export * from './objectKeys'
+export * from './objectValues'
 
 export * from './lastOf'
 export * from './firstOf'
