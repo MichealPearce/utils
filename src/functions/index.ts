@@ -26,6 +26,7 @@ export * from './random'
 export * from './chunk'
 export * from './objectKeys'
 export * from './objectValues'
+export * from './chunk'
 
 export * from './lastOf'
 export * from './firstOf'
