@@ -1,8 +1,8 @@
 import { Is, Not, not } from './is'
-import { isObject } from './isObject'
+import { isRecord } from './isRecord'
 
 export function isSet<T>(thing: T): thing is Is<T, Set<any>> {
-	return isObject(thing) && thing instanceof Set
+	return isRecord(thing) && thing instanceof Set
 }
 
 export function notSet<T>(thing: T): thing is Not<T, Set<any>> {
