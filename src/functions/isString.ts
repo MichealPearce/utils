@@ -1,7 +1,7 @@
 import { Is, Not, not } from './is'
 
 export function isString<T>(thing: T): thing is Is<T, string> {
-	return typeof thing === 'string'
+	return typeof thing === 'string' || thing instanceof String
 }
 
 export function isEmptyString<T>(thing: T): thing is Is<T, ''> {
