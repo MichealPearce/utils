@@ -11,7 +11,7 @@
  *
  * console.log(newObj) // { b: 2 }
  */
-export function omit<Obj extends object, Key extends keyof Obj>(
+export function omit<Obj extends Record<any, any>, Key extends keyof Obj>(
 	obj: Obj,
 	keys: Key[],
 ): Omit<Obj, Key> {
