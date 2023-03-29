@@ -30,9 +30,9 @@
 		"LICENSE"
 	],
 	"scripts": {
+		"test": "vitest",
 		"dev": "nodemon",
 		"build": "bash ./scripts/build.sh",
-		"test": "echo 'running test...' && ts-node test/index.ts",
 		"publish": "yarn build && yarn npm publish --access public"
 	},
 	"nodemonConfig": {
@@ -50,6 +50,7 @@
 		"ts-node": "^10.9.1",
 		"tsconfig-paths": "^4.1.2",
 		"typescript": "^4.9.3",
-		"vite": "^4.2.0"
+		"vite": "^4.2.0",
+		"vitest": "^0.29.8"
 	}
 }
