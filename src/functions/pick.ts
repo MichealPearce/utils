@@ -11,7 +11,7 @@
  *
  * console.log(newObj) // { a: 1, c: 3 }
  */
-export function pick<Obj extends object, Key extends keyof Obj>(
+export function pick<Obj extends Record<any, any>, Key extends keyof Obj>(
 	obj: Obj,
 	keys: Key[],
 ): Pick<Obj, Key> {
