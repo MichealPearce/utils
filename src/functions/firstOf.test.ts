@@ -10,9 +10,12 @@ it('gets the first item in a iterable or string', () => {
 		['c', 3],
 	])
 
+	const empty: any[] = []
+
 	expect(firstOf(arr)).toBe(1)
 	expect(firstOf(set)).toBe(1)
 	expect(firstOf(map)).toEqual(['a', 1])
+	expect(firstOf(empty)).toBe(undefined)
 
 	expect(firstOf('Hello, World!')).toBe('H')
 })

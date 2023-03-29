@@ -9,6 +9,9 @@ declare module 'vite' {
 export default defineConfig({
 	test: {
 		includeSource: ['src/**/*.test.ts'],
+		coverage: {
+			provider: 'istanbul',
+		},
 	},
 
 	build: {
