@@ -1,6 +1,6 @@
 {
 	"name": "@michealpearce/utils",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"license": "Unlicense",
 	"author": {
 		"name": "Micheal Pearce",
@@ -32,26 +32,16 @@
 	"scripts": {
 		"test": "vitest",
 		"coverage": "vitest --coverage",
-		"dev": "nodemon",
-		"build": "bash ./scripts/build.sh",
+		"build:test": "vitest run",
+		"build:vite": "vite build",
+		"build": "run-s build:test build:vite",
 		"publish": "yarn build && yarn npm publish --access public"
-	},
-	"nodemonConfig": {
-		"exec": "run-s build test",
-		"ext": "ts",
-		"watch": [
-			"src",
-			"test"
-		]
 	},
 	"devDependencies": {
 		"@types/node": "^18.13.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"@vitest/coverage-istanbul": "^0.29.8",
-		"nodemon": "^2.0.20",
 		"npm-run-all": "^4.1.5",
-		"ts-node": "^10.9.1",
-		"tsconfig-paths": "^4.1.2",
 		"typescript": "^4.9.3",
 		"vite": "^4.2.0",
 		"vitest": "^0.29.8"
